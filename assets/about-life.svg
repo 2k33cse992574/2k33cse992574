@@ -1,0 +1,238 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 350" width="100%" height="100%">
+  <defs>
+    <linearGradient id="al-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#247bff" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.6"/>
+    </linearGradient>
+
+    <pattern id="al-grid" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="10" cy="10" r="1" fill="#1e2d4a" fill-opacity="0.4"/>
+    </pattern>
+
+    <linearGradient id="al-bar-grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#247bff"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+
+    <linearGradient id="al-bar-grad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </linearGradient>
+
+    <linearGradient id="al-bar-grad3" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff354f"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+
+  <style>
+    .al-txt { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+    /* Progress Segments: 12s total (0-4s, 4-8s, 8-12s) */
+    @keyframes alBar1 {
+      0% { width: 0px; }
+      30%, 33.3% { width: 126px; }
+      33.4%, 100% { width: 126px; opacity: 0.35; }
+    }
+    @keyframes alBar2 {
+      0%, 33.3% { width: 0px; opacity: 1; }
+      33.4% { width: 0px; }
+      63%, 66.6% { width: 126px; }
+      66.7%, 100% { width: 126px; opacity: 0.35; }
+    }
+    @keyframes alBar3 {
+      0%, 66.6% { width: 0px; opacity: 1; }
+      66.7% { width: 0px; }
+      96%, 100% { width: 126px; }
+    }
+
+    /* Slide Cross-fading: 12s cycle */
+    @keyframes alSlide1 {
+      0%, 30% { opacity: 1; transform: translateY(0); }
+      33.3%, 97% { opacity: 0; transform: translateY(10px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes alSlide2 {
+      0%, 30% { opacity: 0; transform: translateY(-10px); }
+      33.3%, 63% { opacity: 1; transform: translateY(0); }
+      66.6%, 100% { opacity: 0; transform: translateY(10px); }
+    }
+    @keyframes alSlide3 {
+      0%, 63% { opacity: 0; transform: translateY(-10px); }
+      66.6%, 96% { opacity: 1; transform: translateY(0); }
+      100% { opacity: 0; transform: translateY(10px); }
+    }
+
+    .al-seg-1 { animation: alBar1 12s infinite linear; }
+    .al-seg-2 { animation: alBar2 12s infinite linear; }
+    .al-seg-3 { animation: alBar3 12s infinite linear; }
+
+    .al-slide-1 { animation: alSlide1 12s infinite ease-in-out; }
+    .al-slide-2 { animation: alSlide2 12s infinite ease-in-out; }
+    .al-slide-3 { animation: alSlide3 12s infinite ease-in-out; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .al-seg-1, .al-seg-2, .al-seg-3 { width: 126px !important; animation: none !important; opacity: 0.8 !important; }
+      .al-slide-1 { opacity: 1 !important; transform: none !important; animation: none !important; }
+      .al-slide-2, .al-slide-3 { display: none !important; }
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="920" height="350" rx="16" fill="#070b16"/>
+  <rect width="920" height="350" rx="16" fill="url(#al-grid)"/>
+  <rect width="918" height="348" x="1" y="1" rx="15" fill="none" stroke="url(#al-border)" stroke-width="1.5"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 36)">
+    <circle cx="6" cy="6" r="4" fill="#247bff"/>
+    <text x="18" y="10" fill="#f8fafc" font-size="15" font-weight="800" letter-spacing="1" class="al-txt">
+      CORE ARCHITECTURAL PILLARS &amp; ENGINEERING FOCUS
+    </text>
+    <text x="18" y="27" fill="#64748b" font-size="12" font-weight="500" class="al-txt">
+      Production disciplines spanning concurrent backend services, production RAG, and telemetry ML
+    </text>
+  </g>
+
+  <!-- Left Card: Capabilities & Tenets (x: 40, y: 80, w: 410, h: 236) -->
+  <g transform="translate(40, 80)">
+    <rect width="410" height="236" rx="12" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+
+    <!-- Header -->
+    <text x="24" y="32" fill="#93c5fd" font-size="12" font-weight="700" letter-spacing="0.8" class="al-txt">
+      SYSTEM CAPABILITIES
+    </text>
+
+    <!-- Item 1: Concurrency -->
+    <g transform="translate(24, 52)">
+      <rect width="28" height="28" rx="6" fill="#132342" stroke="#247bff" stroke-width="1"/>
+      <text x="8" y="19" font-size="14">⚡</text>
+      <text x="38" y="15" fill="#f1f5f9" font-size="13" font-weight="700" class="al-txt">
+        Concurrent State &amp; Rate Limiting
+      </text>
+      <text x="38" y="31" fill="#94a3b8" font-size="11.5" class="al-txt">
+        Token-bucket algorithms, thread safety &amp; lock contention control.
+      </text>
+    </g>
+
+    <!-- Item 2: Production RAG -->
+    <g transform="translate(24, 110)">
+      <rect width="28" height="28" rx="6" fill="#20183b" stroke="#8b5cf6" stroke-width="1"/>
+      <text x="8" y="19" font-size="14">🧠</text>
+      <text x="38" y="15" fill="#f1f5f9" font-size="13" font-weight="700" class="al-txt">
+        Retrieval-Augmented Generation
+      </text>
+      <text x="38" y="31" fill="#94a3b8" font-size="11.5" class="al-txt">
+        Sub-query decomposition, semantic FAISS indexing, LLM chains.
+      </text>
+    </g>
+
+    <!-- Item 3: Predictive ML -->
+    <g transform="translate(24, 168)">
+      <rect width="28" height="28" rx="6" fill="#2d1624" stroke="#ff354f" stroke-width="1"/>
+      <text x="8" y="19" font-size="14">📊</text>
+      <text x="38" y="15" fill="#f1f5f9" font-size="13" font-weight="700" class="al-txt">
+        Predictive Inference &amp; Telemetry
+      </text>
+      <text x="38" y="31" fill="#94a3b8" font-size="11.5" class="al-txt">
+        XGBoost scoring APIs, SHAP interpretability, sensor telemetry.
+      </text>
+    </g>
+  </g>
+
+  <!-- Right Card: 3-Slide Carousel with Segment Progress Bars (x: 470, y: 80, w: 410, h: 236) -->
+  <g transform="translate(470, 80)">
+    <rect width="410" height="236" rx="12" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+
+    <!-- Progress Segments Header (3 Segments: width 116px each, gap 8px) -->
+    <g transform="translate(24, 20)">
+      <!-- Segment 1 Base & Fill -->
+      <rect x="0" y="0" width="116" height="4" rx="2" fill="#1b2a47"/>
+      <rect x="0" y="0" width="0" height="4" rx="2" fill="url(#al-bar-grad1)" class="al-seg-1"/>
+
+      <!-- Segment 2 Base & Fill -->
+      <rect x="124" y="0" width="116" height="4" rx="2" fill="#1b2a47"/>
+      <rect x="124" y="0" width="0" height="4" rx="2" fill="url(#al-bar-grad2)" class="al-seg-2"/>
+
+      <!-- Segment 3 Base & Fill -->
+      <rect x="248" y="0" width="116" height="4" rx="2" fill="#1b2a47"/>
+      <rect x="248" y="0" width="0" height="4" rx="2" fill="url(#al-bar-grad3)" class="al-seg-3"/>
+    </g>
+
+    <!-- Slide 1: Systems Architecture -->
+    <g class="al-slide-1" transform="translate(24, 46)">
+      <rect x="0" y="0" width="168" height="22" rx="4" fill="#112242" stroke="#247bff" stroke-width="0.8"/>
+      <text x="8" y="15" fill="#60a5fa" font-size="10.5" font-weight="700" letter-spacing="0.5" class="al-txt">
+        TRACK 01 // SYSTEMS FOCUS
+      </text>
+
+      <text x="0" y="44" fill="#f8fafc" font-size="15" font-weight="700" class="al-txt">
+        High-Concurrency Worker Pools
+      </text>
+
+      <text x="0" y="68" fill="#cbd5e1" font-size="12" class="al-txt">
+        <tspan x="0" dy="0">• Token-bucket rate limiting to protect external APIs</tspan>
+        <tspan x="0" dy="20">• Python ThreadPoolExecutor with lock &amp; semaphore control</tspan>
+        <tspan x="0" dy="20">• Simulated API failure injection and retry handling</tspan>
+      </text>
+
+      <g transform="translate(0, 134)">
+        <rect width="362" height="26" rx="6" fill="#080f1e" stroke="#1d3056" stroke-width="0.8"/>
+        <text x="12" y="17" fill="#93c5fd" font-size="11" font-weight="600" class="al-txt">
+          Portfolio: Concurrent-Rate-Limited-Worker-Pool
+        </text>
+      </g>
+    </g>
+
+    <!-- Slide 2: RAG & GenAI -->
+    <g class="al-slide-2" transform="translate(24, 46)">
+      <rect x="0" y="0" width="176" height="22" rx="4" fill="#221840" stroke="#8b5cf6" stroke-width="0.8"/>
+      <text x="8" y="15" fill="#c084fc" font-size="10.5" font-weight="700" letter-spacing="0.5" class="al-txt">
+        TRACK 02 // INTELLIGENT RAG
+      </text>
+
+      <text x="0" y="44" fill="#f8fafc" font-size="15" font-weight="700" class="al-txt">
+        Medical Research RAG Assistant
+      </text>
+
+      <text x="0" y="68" fill="#cbd5e1" font-size="12" class="al-txt">
+        <tspan x="0" dy="0">• Sub-query decomposition for multi-document comparisons</tspan>
+        <tspan x="0" dy="20">• FAISS semantic vector store + sentence-transformers</tspan>
+        <tspan x="0" dy="20">• Google Gemini orchestration via LangChain &amp; Streamlit</tspan>
+      </text>
+
+      <g transform="translate(0, 134)">
+        <rect width="362" height="26" rx="6" fill="#080f1e" stroke="#1d3056" stroke-width="0.8"/>
+        <text x="12" y="17" fill="#d8b4fe" font-size="11" font-weight="600" class="al-txt">
+          Portfolio: medical-rag-assistant (Live on HF Spaces)
+        </text>
+      </g>
+    </g>
+
+    <!-- Slide 3: Predictive ML Services -->
+    <g class="al-slide-3" transform="translate(24, 46)">
+      <rect x="0" y="0" width="186" height="22" rx="4" fill="#2d1522" stroke="#ff354f" stroke-width="0.8"/>
+      <text x="8" y="15" fill="#fb7185" font-size="10.5" font-weight="700" letter-spacing="0.5" class="al-txt">
+        TRACK 03 // PREDICTIVE SERVICES
+      </text>
+
+      <text x="0" y="44" fill="#f8fafc" font-size="15" font-weight="700" class="al-txt">
+        Real-Time Fraud &amp; Telemetry ML
+      </text>
+
+      <text x="0" y="68" fill="#cbd5e1" font-size="12" class="al-txt">
+        <tspan x="0" dy="0">• Low-latency fraud scoring microservice (XGBoost + FastAPI)</tspan>
+        <tspan x="0" dy="20">• SHAP tree explainers for real-time model decision visibility</tspan>
+        <tspan x="0" dy="20">• Sensor-style machine fault classification (scikit-learn)</tspan>
+      </text>
+
+      <g transform="translate(0, 134)">
+        <rect width="362" height="26" rx="6" fill="#080f1e" stroke="#1d3056" stroke-width="0.8"/>
+        <text x="12" y="17" fill="#fda4af" font-size="11" font-weight="600" class="al-txt">
+          Portfolio: real-time-fraud-detection &amp; machine-health
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>

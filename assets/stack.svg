@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 490" width="100%" height="100%">
+  <defs>
+    <linearGradient id="st-border" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#247bff" stop-opacity="0.7"/>
+      <stop offset="50%" stop-color="#1e293b" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#00d2ff" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <radialGradient id="st-center-glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00d2ff" stop-opacity="0.45"/>
+      <stop offset="50%" stop-color="#247bff" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#070b16" stop-opacity="0"/>
+    </radialGradient>
+
+    <pattern id="st-grid" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="11" cy="11" r="1" fill="#1e2d4a" fill-opacity="0.4"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .st-txt { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+
+    @keyframes stPulseCore {
+      0%, 100% { transform: scale(1); opacity: 0.8; }
+      50% { transform: scale(1.15); opacity: 1; }
+    }
+    @keyframes stOrbitDash {
+      to { stroke-dashoffset: -120; }
+    }
+    @keyframes stFloatNode {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    .st-core-node { transform-origin: 460px 145px; animation: stPulseCore 4s infinite ease-in-out; }
+    .st-dash-1 { animation: stOrbitDash 18s infinite linear; }
+    .st-dash-2 { animation: stOrbitDash 24s infinite linear; }
+    .st-dash-3 { animation: stOrbitDash 30s infinite linear; }
+    .st-float { animation: stFloatNode 5s infinite ease-in-out; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .st-core-node, .st-dash-1, .st-dash-2, .st-dash-3, .st-float { animation: none !important; }
+    }
+  </style>
+
+  <!-- Background -->
+  <rect width="920" height="490" rx="16" fill="#070b16"/>
+  <rect width="920" height="490" rx="16" fill="url(#st-grid)"/>
+  <rect width="918" height="488" x="1" y="1" rx="15" fill="none" stroke="url(#st-border)" stroke-width="1.5"/>
+
+  <!-- Top Title Banner -->
+  <g transform="translate(40, 36)">
+    <circle cx="6" cy="6" r="4" fill="#00d2ff"/>
+    <text x="18" y="10" fill="#f8fafc" font-size="15" font-weight="800" letter-spacing="1" class="st-txt">
+      CORE TECHNOLOGY RADAR &amp; STACK MATRIX
+    </text>
+    <text x="18" y="27" fill="#64748b" font-size="12" font-weight="500" class="st-txt">
+      Verified technical architecture across core languages, backend services, vector retrieval, and machine learning
+    </text>
+  </g>
+
+  <!-- ==================== ORBITAL VISUAL (Center: 460, 145) ==================== -->
+  <g id="st-radar-group">
+    <!-- Center Core Glow -->
+    <circle cx="460" cy="145" r="90" fill="url(#st-center-glow)"/>
+
+    <!-- Orbit 3: Outer Ellipse (AI/ML & Containers) - tilted -5 deg -->
+    <g transform="rotate(-5, 460, 145)">
+      <ellipse cx="460" cy="145" rx="390" ry="76" fill="none" stroke="#ff354f" stroke-opacity="0.35" stroke-width="1.2" stroke-dasharray="10 8" class="st-dash-3"/>
+    </g>
+
+    <!-- Orbit 2: Middle Ellipse (Backend & Databases) - tilted 7 deg -->
+    <g transform="rotate(7, 460, 145)">
+      <ellipse cx="460" cy="145" rx="275" ry="58" fill="none" stroke="#247bff" stroke-opacity="0.5" stroke-width="1.2" stroke-dasharray="8 6" class="st-dash-2"/>
+    </g>
+
+    <!-- Orbit 1: Inner Ellipse (Languages) - tilted -10 deg -->
+    <g transform="rotate(-10, 460, 145)">
+      <ellipse cx="460" cy="145" rx="165" ry="40" fill="none" stroke="#00d2ff" stroke-opacity="0.6" stroke-width="1.2" stroke-dasharray="6 6" class="st-dash-1"/>
+    </g>
+
+    <!-- Center Core Hub -->
+    <g class="st-core-node">
+      <circle cx="460" cy="145" r="28" fill="#0c152a" stroke="#00d2ff" stroke-width="2"/>
+      <circle cx="460" cy="145" r="14" fill="#247bff" opacity="0.6"/>
+      <circle cx="460" cy="145" r="6" fill="#f8fafc"/>
+      <text x="460" y="184" text-anchor="middle" fill="#93c5fd" font-size="10" font-weight="700" letter-spacing="1" class="st-txt">
+        CORE // ENGINE
+      </text>
+    </g>
+
+    <!-- Orbital Nodes (Correctly Labelled Badges) -->
+
+    <!-- Orbit 1 Nodes (Languages) -->
+    <!-- Python (Left-Inner) -->
+    <g transform="translate(325, 126)" class="st-float">
+      <rect width="78" height="24" rx="12" fill="#0b172e" stroke="#38bdf8" stroke-width="1"/>
+      <circle cx="12" cy="12" r="4" fill="#38bdf8"/>
+      <text x="22" y="16" fill="#f1f5f9" font-size="11" font-weight="700" class="st-txt">Python</text>
+    </g>
+
+    <!-- C++ (Right-Inner) -->
+    <g transform="translate(520, 126)" class="st-float">
+      <rect width="66" height="24" rx="12" fill="#0b172e" stroke="#60a5fa" stroke-width="1"/>
+      <circle cx="12" cy="12" r="4" fill="#60a5fa"/>
+      <text x="22" y="16" fill="#f1f5f9" font-size="11" font-weight="700" class="st-txt">C++</text>
+    </g>
+
+    <!-- TypeScript (Top-Inner) -->
+    <g transform="translate(416, 94)">
+      <rect width="90" height="22" rx="11" fill="#0b172e" stroke="#38bdf8" stroke-width="1"/>
+      <circle cx="11" cy="11" r="3.5" fill="#38bdf8"/>
+      <text x="20" y="15" fill="#e2e8f0" font-size="10.5" font-weight="700" class="st-txt">TypeScript</text>
+    </g>
+
+    <!-- Orbit 2 Nodes (Backend & Data) -->
+    <!-- FastAPI (Left-Mid) -->
+    <g transform="translate(195, 124)">
+      <rect width="84" height="24" rx="12" fill="#0c1d2e" stroke="#00d2ff" stroke-width="1"/>
+      <circle cx="12" cy="12" r="4" fill="#00d2ff"/>
+      <text x="22" y="16" fill="#f1f5f9" font-size="11" font-weight="700" class="st-txt">FastAPI</text>
+    </g>
+
+    <!-- Node.js (Right-Mid) -->
+    <g transform="translate(645, 124)">
+      <rect width="84" height="24" rx="12" fill="#0f241a" stroke="#22c55e" stroke-width="1"/>
+      <circle cx="12" cy="12" r="4" fill="#22c55e"/>
+      <text x="22" y="16" fill="#f1f5f9" font-size="11" font-weight="700" class="st-txt">Node.js</text>
+    </g>
+
+    <!-- MongoDB (Bottom-Mid) -->
+    <g transform="translate(390, 196)">
+      <rect width="92" height="22" rx="11" fill="#0f241a" stroke="#10b981" stroke-width="1"/>
+      <circle cx="11" cy="11" r="3.5" fill="#10b981"/>
+      <text x="20" y="15" fill="#e2e8f0" font-size="10.5" font-weight="700" class="st-txt">MongoDB</text>
+    </g>
+
+    <!-- FAISS (Bottom-Mid Right) -->
+    <g transform="translate(492, 196)">
+      <rect width="78" height="22" rx="11" fill="#24190e" stroke="#f59e0b" stroke-width="1"/>
+      <circle cx="11" cy="11" r="3.5" fill="#f59e0b"/>
+      <text x="20" y="15" fill="#e2e8f0" font-size="10.5" font-weight="700" class="st-txt">FAISS</text>
+    </g>
+
+    <!-- Orbit 3 Nodes (AI/ML & DevOps) -->
+    <!-- Google Gemini (Far-Left) -->
+    <g transform="translate(68, 142)">
+      <rect width="114" height="24" rx="12" fill="#161b36" stroke="#818cf8" stroke-width="1"/>
+      <circle cx="12" cy="12" r="4" fill="#818cf8"/>
+      <text x="22" y="16" fill="#f1f5f9" font-size="11" font-weight="700" class="st-txt">Google Gemini</text>
+    </g>
+
+    <!-- LangChain (Far-Right) -->
+    <g transform="translate(742, 142)">
+      <rect width="102" height="24" rx="12" fill="#0d2421" stroke="#10b981" stroke-width="1"/>
+      <circle cx="12" cy="12" r="4" fill="#10b981"/>
+      <text x="22" y="16" fill="#f1f5f9" font-size="11" font-weight="700" class="st-txt">LangChain</text>
+    </g>
+
+    <!-- XGBoost (Top Far-Left) -->
+    <g transform="translate(180, 70)">
+      <rect width="90" height="22" rx="11" fill="#281519" stroke="#ff354f" stroke-width="1"/>
+      <circle cx="11" cy="11" r="3.5" fill="#ff354f"/>
+      <text x="20" y="15" fill="#f1f5f9" font-size="10.5" font-weight="700" class="st-txt">XGBoost</text>
+    </g>
+
+    <!-- Docker (Top Far-Right) -->
+    <g transform="translate(660, 70)">
+      <rect width="80" height="22" rx="11" fill="#0c1d2e" stroke="#38bdf8" stroke-width="1"/>
+      <circle cx="11" cy="11" r="3.5" fill="#38bdf8"/>
+      <text x="20" y="15" fill="#f1f5f9" font-size="10.5" font-weight="700" class="st-txt">Docker</text>
+    </g>
+  </g>
+
+  <!-- ==================== LOWER GROUPED STACK CHIPS ==================== -->
+  <g transform="translate(40, 248)">
+    <!-- Category 1: Languages (w: 160) -->
+    <g transform="translate(0, 0)">
+      <rect width="158" height="210" rx="10" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+      <text x="16" y="24" fill="#93c5fd" font-size="11" font-weight="800" letter-spacing="0.8" class="st-txt">LANGUAGES</text>
+
+      <g transform="translate(16, 40)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#247bff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Python</text>
+      </g>
+      <g transform="translate(16, 80)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#247bff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">C++</text>
+      </g>
+      <g transform="translate(16, 120)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#247bff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">JavaScript</text>
+      </g>
+      <g transform="translate(16, 160)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#247bff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">TypeScript</text>
+      </g>
+    </g>
+
+    <!-- Category 2: Backend Services (w: 160) -->
+    <g transform="translate(170, 0)">
+      <rect width="158" height="210" rx="10" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+      <text x="16" y="24" fill="#93c5fd" font-size="11" font-weight="800" letter-spacing="0.8" class="st-txt">BACKEND</text>
+
+      <g transform="translate(16, 40)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#00d2ff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">FastAPI</text>
+      </g>
+      <g transform="translate(16, 80)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#00d2ff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Node.js</text>
+      </g>
+      <g transform="translate(16, 120)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#00d2ff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Express</text>
+      </g>
+      <g transform="translate(16, 160)">
+        <rect width="126" height="32" rx="6" fill="#080f1e" stroke="#00d2ff" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Flask</text>
+      </g>
+    </g>
+
+    <!-- Category 3: Databases & Vector (w: 154) -->
+    <g transform="translate(340, 0)">
+      <rect width="152" height="210" rx="10" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+      <text x="16" y="24" fill="#93c5fd" font-size="11" font-weight="800" letter-spacing="0.8" class="st-txt">DATA &amp; VECTOR</text>
+
+      <g transform="translate(14, 40)">
+        <rect width="124" height="32" rx="6" fill="#080f1e" stroke="#10b981" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">MongoDB</text>
+      </g>
+      <g transform="translate(14, 80)">
+        <rect width="124" height="32" rx="6" fill="#080f1e" stroke="#f59e0b" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">FAISS Vector</text>
+      </g>
+      <g transform="translate(14, 120)">
+        <rect width="124" height="72" rx="6" fill="#080f1e" stroke="#1e293b" stroke-width="0.8"/>
+        <text x="10" y="22" fill="#94a3b8" font-size="10.5" class="st-txt">
+          <tspan x="10" dy="0">Focus on dense</tspan>
+          <tspan x="10" dy="16">embeddings &amp;</tspan>
+          <tspan x="10" dy="16">efficient retrieval.</tspan>
+        </text>
+      </g>
+    </g>
+
+    <!-- Category 4: AI & ML (w: 184) -->
+    <g transform="translate(504, 0)">
+      <rect width="180" height="210" rx="10" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+      <text x="16" y="24" fill="#93c5fd" font-size="11" font-weight="800" letter-spacing="0.8" class="st-txt">AI / ML ECOSYSTEM</text>
+
+      <g transform="translate(14, 38)">
+        <rect width="152" height="28" rx="6" fill="#080f1e" stroke="#818cf8" stroke-width="0.8"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="700" class="st-txt">Google Gemini</text>
+      </g>
+      <g transform="translate(14, 72)">
+        <rect width="152" height="28" rx="6" fill="#080f1e" stroke="#10b981" stroke-width="0.8"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="700" class="st-txt">LangChain</text>
+      </g>
+      <g transform="translate(14, 106)">
+        <rect width="152" height="28" rx="6" fill="#080f1e" stroke="#ff354f" stroke-width="0.8"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="700" class="st-txt">XGBoost &amp; SHAP</text>
+      </g>
+      <g transform="translate(14, 140)">
+        <rect width="152" height="28" rx="6" fill="#080f1e" stroke="#f59e0b" stroke-width="0.8"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="700" class="st-txt">scikit-learn</text>
+      </g>
+      <g transform="translate(14, 174)">
+        <rect width="152" height="28" rx="6" fill="#080f1e" stroke="#38bdf8" stroke-width="0.8"/>
+        <text x="10" y="18" fill="#f8fafc" font-size="11" font-weight="700" class="st-txt">sentence-transformers</text>
+      </g>
+    </g>
+
+    <!-- Category 5: Tools & Containers (w: 144) -->
+    <g transform="translate(696, 0)">
+      <rect width="144" height="210" rx="10" fill="#0c1426" stroke="#1d2d50" stroke-width="1"/>
+      <text x="16" y="24" fill="#93c5fd" font-size="11" font-weight="800" letter-spacing="0.8" class="st-txt">DEVOPS &amp; TOOLS</text>
+
+      <g transform="translate(12, 40)">
+        <rect width="120" height="32" rx="6" fill="#080f1e" stroke="#38bdf8" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Docker</text>
+      </g>
+      <g transform="translate(12, 80)">
+        <rect width="120" height="32" rx="6" fill="#080f1e" stroke="#38bdf8" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Docker Compose</text>
+      </g>
+      <g transform="translate(12, 120)">
+        <rect width="120" height="32" rx="6" fill="#080f1e" stroke="#ff354f" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#f8fafc" font-size="12" font-weight="700" class="st-txt">Streamlit</text>
+      </g>
+      <g transform="translate(12, 160)">
+        <rect width="120" height="32" rx="6" fill="#080f1e" stroke="#64748b" stroke-width="0.8"/>
+        <text x="12" y="20" fill="#cbd5e1" font-size="11.5" font-weight="600" class="st-txt">Git &amp; GitHub</text>
+      </g>
+    </g>
+  </g>
+</svg>
